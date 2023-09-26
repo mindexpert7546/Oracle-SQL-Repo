@@ -1,0 +1,263 @@
+-- create table supplier (
+--     supplier_id numeric(10) not null,
+--     supplier_name varchar2(59) not null,
+--     supplier_contact varchar2(59),
+--     constraint pk_supplier primary key(supplier_id)
+-- );
+
+-- create table product(
+--     product_id numeric(10) not null,
+--     supplier_id numeric(10) not null,
+--     constraint fp_product primary key(product_id),
+--     constraint fk_product foreign key(supplier_id) references supplier(supplier_id)
+-- )
+
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (2,'Krishna','7895686547');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (3,'Shyam','9865896574');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (4,'Pawan','8754865875');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (5,'Mohan','8569658742');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (6,'Suraj','8231025789');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (7,'Ashish','7586302145');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (8,'Sushil','8965896584');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (10,'Keshav','9965874502');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (11,'Kumar','8754865754');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (12,'Kundan','8546985485');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (13,'Shyam','9865745826');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (14,'Kishor','6958647562');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (15,'Ujjawal','6235849758');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (16,'Saurabh','8574687547');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (17,'Randhir','7548658790');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (18,'RajKumar','7658402135');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (19,'Rana','7548698750');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (20,'Sohan','8885997462');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (21,'Krishan','9685475820');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (22,'Krish','99965847562');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (23,'Aman','7748578231');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (24,'Aditya','8855223300');
+-- insert into supplier(supplier_id,supplier_name,supplier_contact) values (25,'Kumar','9876543210');
+
+-- insert into products (product_id, supplier_id) values (101,1);
+-- insert into products (product_id, supplier_id) values (102,2);
+-- insert into products (product_id, supplier_id) values (103,3);
+-- insert into products (product_id, supplier_id) values (104,4);
+-- insert into products (product_id, supplier_id) values (105,5);
+-- insert into products (product_id, supplier_id) values (106,6);
+-- insert into products (product_id, supplier_id) values (107,7);
+-- insert into products (product_id, supplier_id) values (108,8);
+-- insert into products (product_id, supplier_id) values (109,9);
+-- insert into products (product_id, supplier_id) values (110,10);
+-- insert into products (product_id, supplier_id) values (111,11);
+-- insert into products (product_id, supplier_id) values (112,12);
+-- insert into products (product_id, supplier_id) values (113,13);
+-- insert into products (product_id, supplier_id) values (114,14);
+-- insert into products (product_id, supplier_id) values (115,15);
+-- insert into products (product_id, supplier_id) values (116,15);
+-- insert into products (product_id, supplier_id) values (117,17);
+-- insert into products (product_id, supplier_id) values (118,18);
+-- insert into products (product_id, supplier_id) values (119,19);
+-- insert into products (product_id, supplier_id) values (120,20);
+-- insert into products (product_id, supplier_id) values (121,21);
+-- insert into products (product_id, supplier_id) values (122,22);
+-- insert into products (product_id, supplier_id) values (123,23);
+-- insert into products (product_id, supplier_id) values (124,24);
+-- insert into products (product_id, supplier_id) values (125,25);
+
+
+-- truncate table products;
+-- describe products;
+-- select * from supplier order by supplier_id;
+-- select * from products;
+-- alter table product rename to products;
+-- select * from products order by product_id asc;
+-- Alter table products add  product_name varchar2(50);
+
+-- BEGIN
+--     FOR i IN 101..125 LOOP
+--         UPDATE products
+--         SET product_name = 'Product_' || i
+--         WHERE product_id = i;
+--     END LOOP;
+--     COMMIT;
+-- END;
+-- /
+
+-- to fill the random values in any particular column
+-- BEGIN
+--     FOR i IN 101..125 LOOP
+--         UPDATE products
+--         SET product_name = case ROUND(DBMS_RANDOM.VALUE(1,3))
+--                         when 1 then 'Dell'
+--                         when 2 then 'Hp'
+--                         when 3 then 'Lenovo'
+--                         end
+--         WHERE product_id = i;
+--     END LOOP;
+--     COMMIT;
+-- END;
+-- /
+
+
+*****************************************************************************************************************************************
+
+-- create table product (
+--     product_id numeric(10) not null,
+--     product_name varchar2(50),
+--     constraint pk_product primary key(product_id)
+-- )
+
+-- insert into product (product_id, product_name) values (2,'Lenovo');
+-- insert into product (product_id, product_name) values (3,'Pen');
+-- insert into product (product_id, product_name) values (4,'Book');
+-- insert into product (product_id, product_name) values (5,'Note Book');
+-- insert into product (product_id, product_name) values (6,'Cup');
+-- insert into product (product_id, product_name) values (7,'Iphone');
+-- insert into product (product_id, product_name) values (8,'Bag');
+-- insert into product (product_id, product_name) values (9,'Lanp');
+-- insert into product (product_id, product_name) values (10,'Watch');
+-- insert into product (product_id, product_name) values (11,'Iron');
+-- insert into product (product_id, product_name) values (12,'Glass');
+-- insert into product (product_id, product_name) values (13,'Mobile');
+-- insert into product (product_id, product_name) values (14,'Smartphone');
+-- insert into product (product_id, product_name) values (15,'Bicycle');
+-- insert into product (product_id, product_name) values (16,'Running Shoes');
+-- insert into product (product_id, product_name) values (17,'Backpack');
+-- insert into product (product_id, product_name) values (18,'Desk Chair');
+-- insert into product (product_id, product_name) values (19,'Bluetooth Speaker');
+-- insert into product (product_id, product_name) values (20,'Sunglasses');
+-- insert into product (product_id, product_name) values (21,'Digital Camera');
+-- insert into product (product_id, product_name) values (22,'Kitchen Mixer');
+-- insert into product (product_id, product_name) values (23,'Fitness Tracker');
+-- insert into product (product_id, product_name) values (24,'Smart TV');
+-- insert into product (product_id, product_name) values (25,'Vacuum Cleaner');
+-- insert into product (product_id, product_name) values (26,'Drone');
+-- insert into product (product_id, product_name) values (27,'Blender');
+-- insert into product (product_id, product_name) values (28,'Gaming Console');
+-- insert into product (product_id, product_name) values (29,'Microwave Oven');
+-- insert into product (product_id, product_name) values (30,'Electric Toothbrush');
+-- insert into product (product_id, product_name) values (31,'Hair Dryer');
+-- insert into product (product_id, product_name) values (32,'Gaming Mouse');
+-- insert into product (product_id, product_name) values (33,'Garden Hose');
+-- insert into product (product_id, product_name) values (34,'Espresso Machine');
+-- insert into product (product_id, product_name) values (35,'Camping Tent');
+-- insert into product (product_id, product_name) values (36,'E-book Reader');
+-- insert into product (product_id, product_name) values (37,'Power Bank');
+-- insert into product (product_id, product_name) values (38,'Tennis Racket');
+-- insert into product (product_id, product_name) values (39,'Board Game');
+-- insert into product (product_id, product_name) values (40,'Yoga Mat');
+-- insert into product (product_id, product_name) values (41,'Fishing Rod');
+-- insert into product (product_id, product_name) values (42,'Binoculars');
+-- insert into product (product_id, product_name) values (43,'Snowboard');
+-- insert into product (product_id, product_name) values (44,'Toaster');
+-- insert into product (product_id, product_name) values (45,'Sunglasses');
+-- insert into product (product_id, product_name) values (46,'Baby Stroller');
+-- insert into product (product_id, product_name) values (47,'Headphones');
+-- insert into product (product_id, product_name) values (48,'Chess Set');
+-- insert into product (product_id, product_name) values (49,'Potted Plant');
+-- insert into product (product_id, product_name) values (50,'Hiking Boots');
+
+-- select * form product order by product_id asc;
+
+
+-- alter table products rename to product;
+
+-- alter table product add price numeric(10);
+-- desc product;
+
+-- begin 
+--    for i in 1..50 loop
+--    update product 
+--    set price = case ROUND(DBMS_RANDOM.VALUE(120,125))
+--     WHEN 120 THEN 125
+--     WHEN 121 THEN 124
+--     WHEN 122 THEN 123
+--     WHEN 123 THEN 122
+--     WHEN 124 THEN 121
+--     WHEN 125 THEN 120
+--     end
+--     WHERE product_id = i;
+--   end loop;
+--  COMMIT;
+-- END;
+
+*******************************************************************************************************************************
+
+-- create table students (
+--     id numeric(10),
+--     name varchar2(50),
+--     dob date,
+--     constraint sk_student primary key(id)
+-- )
+
+-- select * from students;
+
+-- update students set name = 'Kaju' where id=1;
+
+-- desc students;
+
+-- insert into students (id,name,dob) values (1,'Kajal', to_date('12-06,1990', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (2,'Mohan', to_date('12-03,1991', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (3,'Pawan', to_date('12-05,1992', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (4,'Shaym', to_date('12-06,1993', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (5,'Kabir', to_date('12-05,1994', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (6,'Kundal', to_date('12-05,1969', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (7,'Jytoish', to_date('12-09,1799', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (8,'Manoj', to_date('12-08,1994', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (9,'Saurabh', to_date('12-11,1399', 'DD-MM-YYYY'));
+-- insert into students (id,name,dob) values (10,'Deepak', to_date('12-12,1599', 'DD-MM-YYYY'));
+
+-- select * from students order by id asc;
+
+-- delete from students where id = 10;
+
+-- BEGIN
+--   FOR i IN 11..20 LOOP
+--     INSERT INTO students (id, name, dob)
+--     VALUES (i, 'RandomName' || i, TO_DATE('12-06-1990', 'DD-MM-YYYY'));
+--   END LOOP;
+  
+--   FOR i IN 21..30 LOOP
+--     INSERT INTO students (id, name, dob)
+--     VALUES (i, 'RandomName' || i, TO_DATE('12-03-1991', 'DD-MM-YYYY'));
+--   END LOOP;
+
+--   FOR i IN 31..40 LOOP
+--     INSERT INTO students (id, name, dob)
+--     VALUES (i, 'RandomName' || i, TO_DATE('12-05-1992', 'DD-MM-YYYY'));
+--   END LOOP;
+
+--   COMMIT;
+-- END;
+-- /
+
+
+
+
+-- begin 
+--    for i in 51..60 loop
+--    insert into students (id,name,dob) 
+--    values (i,'Kalam' || i, to_date('12-12-1999','DD-MM-YYYY'));
+-- end loop;
+-- commit;
+-- end;
+-- /
+
+
+*************************************************************************************************************************************************
+
+-- create table people(
+--     id numeric(10) not null,
+--     name varchar2(50) not null,
+--     gender varchar2(10),
+--     constraint mk_people primary key(id)
+-- )
+
+insert into people (id,name,gender) values (2,'Krishna','Male');
+-- ALTER TABLE people
+-- MODIFY gender  INVISIBLE;
+
+select * from people;
+
+
+
+
+
